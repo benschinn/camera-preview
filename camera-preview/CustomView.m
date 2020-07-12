@@ -14,11 +14,10 @@
     [super drawRect:dirtyRect];
     
     CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
-    CGContextSetRGBFillColor(context, 0, 0, 0, 0.50);
+    CGContextSetRGBFillColor(context, 0, 0, 0, 0);
     CGContextFillRect(context, NSRectToCGRect(dirtyRect));
     
     self.layer.borderColor = [[NSColor whiteColor] CGColor];
-    self.layer.borderWidth = 2.0F;
 }
 
 @end

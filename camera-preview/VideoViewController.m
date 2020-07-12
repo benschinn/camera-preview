@@ -28,6 +28,7 @@
     [self initCaptureSession];
     
     [self setupPreviewLayer];
+    
 }
 
 - (void) viewDidLoad {
@@ -42,6 +43,7 @@
     AVCaptureDevice *device = nil;
     AVCaptureDeviceInput *device_input = nil;
     
+    //find camera device
     AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession = [
         AVCaptureDeviceDiscoverySession
         discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
@@ -49,12 +51,13 @@
         position:AVCaptureDevicePositionBack
     ];
     NSArray *captureDevices = [captureDeviceDiscoverySession devices];
+    //set device
+    device = captureDevices[0];
     
-        
-            device = captureDevices[0];
-    NSLog(@"%@", device);
+    // start session immidiately after setting device
+    [session startRunning];
+    
     NSError *__error;
-    
     device_input = [[AVCaptureDeviceInput alloc] initWithDevice: device error : &__error];
     
     if ([session canAddInput:device_input])
