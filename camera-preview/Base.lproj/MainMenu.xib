@@ -686,21 +686,23 @@
             <point key="canvasLocation" x="-94" y="-130"/>
         </menu>
         <window title="camera-preview" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" rightStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="1603" y="0.0" width="957" height="474"/>
+            <rect key="contentRect" x="1180" y="0.0" width="500" height="300"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <value key="minSize" type="size" width="500" height="300"/>
+            <value key="minFullScreenContentSize" type="size" width="500" height="300"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="957" height="474"/>
+                <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YvG-1G-Zhf">
-                        <rect key="frame" x="0.0" y="0.0" width="957" height="474"/>
+                    <customView id="YvG-1G-Zhf">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="151" y="209"/>
+            <point key="canvasLocation" x="89.5" y="209"/>
         </window>
     </objects>
 </document>

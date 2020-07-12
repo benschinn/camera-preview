@@ -17,6 +17,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    self.window.level = NSStatusWindowLevel;
 }
 
 
@@ -24,5 +25,8 @@
     // Insert code here to tear down your application
 }
 
+- (IBAction)changeOnTop:(id)sender {
+    self.window.level = NSStatusWindowLevel;
+}
 
 @end
