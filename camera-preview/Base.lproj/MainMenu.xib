@@ -21,10 +21,9 @@
         <viewController id="Oh0-cZ-mrO" customClass="VideoViewController">
             <connections>
                 <outlet property="imageView1" destination="Wix-T9-m2R" id="shP-eo-Cat"/>
-                <outlet property="starPreviewButton" destination="tYI-Em-vzl" id="CEh-un-lZc"/>
-                <outlet property="startPreviewButton" destination="tYI-Em-vzl" id="2av-n9-Ddw"/>
-                <outlet property="stopPreviewButton" destination="cgY-Ae-B9Q" id="23O-tc-Ry6"/>
-                <outlet property="takePictureButton" destination="i8E-7c-USq" id="4Yg-QU-Qvh"/>
+                <outlet property="startPreviewButton" destination="tYI-Em-vzl" id="W1Z-jx-mS6"/>
+                <outlet property="stopPreviewButton" destination="tYI-Em-vzl" id="Pfl-2i-U9Z"/>
+                <outlet property="takePictureButton" destination="i8E-7c-USq" id="rKG-dc-MKd"/>
                 <outlet property="view" destination="YvG-1G-Zhf" id="wZF-ia-jvM"/>
             </connections>
         </viewController>
@@ -691,10 +690,10 @@
             <point key="canvasLocation" x="-94" y="-130"/>
         </menu>
         <window title="camera-preview" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" rightStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="1603" y="0.0" width="957" height="474"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="957" height="474"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -711,7 +710,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="startPreview_click:" target="Oh0-cZ-mrO" id="ipw-Kg-Sfz"/>
+                            <action selector="startPreview_click:" target="Oh0-cZ-mrO" id="puw-qQ-cSD"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8E-7c-USq">
@@ -722,7 +721,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="takePicture_click:" target="Oh0-cZ-mrO" id="GcK-wN-cAo"/>
+                            <action selector="takePicture_click:" target="Oh0-cZ-mrO" id="VKo-nb-AGS"/>
                         </connections>
                     </button>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wix-T9-m2R">
@@ -738,7 +737,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="stopPreview_click:" target="Oh0-cZ-mrO" id="a8E-4W-SBM"/>
+                            <action selector="stopPreview_click:" target="Oh0-cZ-mrO" id="PTk-88-AQm"/>
                         </connections>
                     </button>
                 </subviews>

@@ -14,14 +14,78 @@
 
 @implementation VideoViewController
 
-- (void)viewDidLoad {
+-(void) viewWillAppear {
     [super viewDidLoad];
+    
+    [super viewWillAppear];
     
     self.customView1 = [[CustomView alloc] initWithFrame: self.view.bounds];
     
     [self.view setWantsLayer: YES];
     
     [self.view addSubview: self.customView1];
+    
+    [self initCaptureSession];
+    
+    [self setupPreviewLayer];
+}
+
+- (void) viewDidLoad {
+}
+
+-(void) initCaptureSession {
+    session = [[AVCaptureSession alloc] init];
+    
+    if ([session canSetSessionPreset:AVCaptureSessionPresetHigh])
+        [session setSessionPreset: AVCaptureSessionPresetHigh];
+    
+    AVCaptureDevice *device = nil;
+    AVCaptureDeviceInput *device_input = nil;
+    
+    AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession = [
+        AVCaptureDeviceDiscoverySession
+        discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
+        mediaType:AVMediaTypeVideo
+        position:AVCaptureDevicePositionBack
+    ];
+    NSArray *captureDevices = [captureDeviceDiscoverySession devices];
+    
+        
+            device = captureDevices[0];
+    NSLog(@"%@", device);
+    NSError *__error;
+    
+    device_input = [[AVCaptureDeviceInput alloc] initWithDevice: device error : &__error];
+    
+    if ([session canAddInput:device_input])
+        [session addInput:device_input];
+    
+}
+
+-(void) setupPreviewLayer {
+    
+    self.preview_layer = [[AVCaptureVideoPreviewLayer alloc] initWithSession : session];
+    
+    [self.preview_layer setVideoGravity: AVLayerVideoGravityResizeAspectFill];
+    
+    [self.preview_layer setFrame : self.view.bounds];
+    
+    [self.view.layer addSublayer: self.preview_layer];
+}
+
+-(IBAction) startPreview_click:(id)sender {
+    NSLog(@"Start Preview");
+    
+    if (![session isRunning])
+        [session startRunning];
+}
+
+-(IBAction) stopPreview_click:(id)sender {
+    if([session isRunning])
+        [session stopRunning];
+}
+
+-(IBAction) takePicture_click:(id)sender {
 }
 
 @end
