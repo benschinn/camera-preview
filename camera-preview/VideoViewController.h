@@ -16,22 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
     AVCaptureSession *session;
     AVCaptureConnection *video_connection;
     AVCapturePhotoOutput *still_image_output;
-    
 }
 
 @property (nonatomic, retain) AVCaptureVideoPreviewLayer *preview_layer;
 
 @property (nonatomic, retain) CustomView *customView1;
 
-@property (nonatomic, retain) IBOutlet NSButton *startPreviewButton;
-@property (nonatomic, retain) IBOutlet NSButton *stopPreviewButton;
-@property (nonatomic, retain) IBOutlet NSButton *takePictureButton;
-
 @property (nonatomic, retain) IBOutlet NSImageView *imageView1;
-
--(IBAction) startPreview_click : (id) sender;
--(IBAction) stopPreview_click : (id) sender;
--(IBAction) takePicture_click : (id) sender;
 
 -(void) initCaptureSession;
 -(void) setupPreviewLayer;

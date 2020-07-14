@@ -62,7 +62,6 @@
     
     if ([session canAddInput:device_input])
         [session addInput:device_input];
-    
 }
 
 -(void) setupPreviewLayer {
@@ -75,20 +74,4 @@
     
     [self.view.layer addSublayer: self.preview_layer];
 }
-
--(IBAction) startPreview_click:(id)sender {
-    NSLog(@"Start Preview");
-    
-    if (![session isRunning])
-        [session startRunning];
-}
-
--(IBAction) stopPreview_click:(id)sender {
-    if([session isRunning])
-        [session stopRunning];
-}
-
--(IBAction) takePicture_click:(id)sender {
-}
-
 @end

@@ -16,17 +16,12 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    // set windowlevel so it is always on top
     self.window.level = NSStatusWindowLevel;
 }
-
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
-}
-
-- (IBAction)changeOnTop:(id)sender {
-    self.window.level = NSStatusWindowLevel;
 }
 
 @end
